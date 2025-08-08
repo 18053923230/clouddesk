@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import { useWindows } from '@/context/WindowsContext';
 import CloudBrowser from './apps/CloudBrowser';
 
@@ -47,18 +47,18 @@ const Window = ({ id, appName, position, zIndex }: WindowProps) => {
     }
   };
 
-  const handleMouseMove = (e: MouseEvent) => {
+  const handleMouseMove = useCallback((e: MouseEvent) => {
     if (isDragging) {
       setCurrentPosition({
         x: e.clientX - dragOffset.x,
         y: e.clientY - dragOffset.y,
       });
     }
-  };
+  }, [isDragging, dragOffset.x, dragOffset.y]);
 
-  const handleMouseUp = () => {
+  const handleMouseUp = useCallback(() => {
     setIsDragging(false);
-  };
+  }, []);
 
   // Add and remove global listeners for mouse move and up
   React.useEffect(() => {
@@ -74,7 +74,7 @@ const Window = ({ id, appName, position, zIndex }: WindowProps) => {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('mouseup', handleMouseUp);
     };
-  }, [isDragging]);
+  }, [isDragging, handleMouseMove, handleMouseUp]);
 
   return (
     <div

@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} font-sans antialiased bg-gradient-to-br from-blue-400 to-indigo-600`}>
         <WindowsProvider>
           {children}
         </WindowsProvider>
