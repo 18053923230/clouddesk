@@ -52,6 +52,7 @@ const CloudBrowser = () => {
         src={`/api/proxy?url=${encodeURIComponent(url)}`}
         className="flex-grow border-none"
         title="CloudBrowser"
+        sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
       />
     </div>
   );
