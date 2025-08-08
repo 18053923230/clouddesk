@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudDesk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="desktop">
+        <div class="desktop-icon" data-app="CloudBrowser">
+            <span>CloudBrowser</span>
+        </div>
+        <div class="desktop-icon" data-app="FileManager">
+            <span>File Manager</span>
+        </div>
+        <div class="desktop-icon" data-app="Settings">
+            <span>Settings</span>
+        </div>
+        <div class="desktop-icon" data-app="Calculator">
+            <span>Calculator</span>
+        </div>
+        <div class="desktop-icon" data-app="ImageViewer">
+            <span>Image Viewer</span>
+        </div>
+    </div>
+
+    <div id="taskbar">
+        <div id="taskbar-apps"></div>
+        <div id="clock"></div>
+    </div>
+
+    <template id="window-template">
+        <div class="window">
+            <div class="window-header">
+                <span class="title">Window</span>
+                <div class="window-controls">
+                    <button class="minimize"></button>
+                    <button class="maximize"></button>
+                    <button class="close"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <!-- App content goes here -->
+            </div>
+        </div>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+</html>
