@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Geist_Sans } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { WindowsProvider } from "@/context/WindowsContext";
 
-const geistSans = Geist_Sans({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-sans",
   subsets: ["latin"],
 });
 
@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} font-sans antialiased`}>
         <WindowsProvider>
           {children}
         </WindowsProvider>
